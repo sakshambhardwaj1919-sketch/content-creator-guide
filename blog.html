@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Blog - Tips, Trends & Insights</title>
+    <meta name="description" content="Latest content creation tips, platform updates, and industry insights for creators.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            margin: -50px 0 0;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .featured-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .featured-image {
+            height: 300px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .post-content {
+            padding: 2rem;
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .post-category {
+            background: #667eea;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .post-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .post-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        .blog-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-widget h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .trending-list {
+            list-style: none;
+        }
+        
+        .trending-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .trending-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .trending-list a:hover {
+            color: #667eea;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #5a6fd8;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            background: #f8f9fa;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border: 1px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .tag:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ContentCreator Pro</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Creator Blog</h1>
+            <p>Latest tips, trends, and insights for content creators</p>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <div class="container">
+                <div class="blog-grid">
+                    <div class="main-content">
+                        <article class="featured-post">
+                            <div class="featured-image">
+                                📱 Featured Article Image
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-category">Trending</span>
+                                    <span>📅 October 10, 2024</span>
+                                    <span>👤 Sarah Johnson</span>
+                                </div>
+                                <h2 class="post-title">The Ultimate Guide to TikTok Algorithm Changes in 2024</h2>
+                                <p class="post-excerpt">TikTok's algorithm has undergone significant changes this year, affecting how content is discovered and promoted. Learn the latest strategies to adapt your content and maintain growth on the platform...</p>
+                                <a href="#" class="read-more">Read Full Article →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="post-image">🎥 Video Content</div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-category">YouTube</span>
+                                    <span>📅 October 8, 2024</span>
+                                </div>
+                                <h3 class="post-title">5 YouTube Shorts Strategies That Actually Work</h3>
+                                <p class="post-excerpt">Discover proven strategies for creating YouTube Shorts that get views and subscribers...</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="post-image">💰 Monetization</div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-category">Business</span>
+                                    <span>📅 October 6, 2024</span>
+                                </div>
+                                <h3 class="post-title">How to Price Your Brand Partnerships in 2024</h3>
+                                <p class="post-excerpt">A comprehensive guide to pricing your sponsored content and brand collaborations...</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="post-image">📊 Analytics</div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-category">Growth</span>
+                                    <span>📅 October 4, 2024</span>
+                                </div>
+                                <h3 class="post-title">Instagram Analytics: What Metrics Actually Matter</h3>
+                                <p class="post-excerpt">Stop focusing on vanity metrics and learn which Instagram analytics drive real growth...</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="post-image">🎨 Design</div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-category">Design</span>
+                                    <span>📅 October 2, 2024</span>
+                                </div>
+                                <h3 class="post-title">Creating Scroll-Stopping Thumbnails: A Designer's Guide</h3>
+                                <p class="post-excerpt">Master the art of thumbnail design with these proven techniques and tools...</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="post-image">🎙️ Podcasting</div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-category">Podcasting</span>
+                                    <span>📅 September 30, 2024</span>
+                                </div>
+                                <h3 class="post-title">Podcast Equipment on a Budget: Complete Setup Under $200</h3>
+                                <p class="post-excerpt">Start your podcast without breaking the bank with this budget-friendly equipment guide...</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside class="sidebar">
+                        <div class="sidebar-widget">
+                            <h3>📈 Trending Topics</h3>
+                            <ul class="trending-list">
+                                <li><a href="#">AI Tools for Content Creation</a></li>
+                                <li><a href="#">Instagram Reels vs TikTok</a></li>
+                                <li><a href="#">Creator Economy Report 2024</a></li>
+                                <li><a href="#">YouTube Monetization Updates</a></li>
+                                <li><a href="#">Brand Partnership Rates</a></li>
+                                <li><a href="#">Content Planning Strategies</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>📧 Newsletter</h3>
+                            <p>Get weekly content creation tips and platform updates delivered to your inbox.</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>🏷️ Popular Tags</h3>
+                            <div class="tags">
+                                <a href="#" class="tag">YouTube</a>
+                                <a href="#" class="tag">TikTok</a>
+                                <a href="#" class="tag">Instagram</a>
+                                <a href="#" class="tag">Monetization</a>
+                                <a href="#" class="tag">Growth</a>
+                                <a href="#" class="tag">Analytics</a>
+                                <a href="#" class="tag">Equipment</a>
+                                <a href="#" class="tag">Editing</a>
+                                <a href="#" class="tag">SEO</a>
+                                <a href="#" class="tag">Branding</a>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>📚 Free Resources</h3>
+                            <ul class="trending-list">
+                                <li><a href="#">Content Calendar Template</a></li>
+                                <li><a href="#">Hashtag Research Guide</a></li>
+                                <li><a href="#">Creator Media Kit Template</a></li>
+                                <li><a href="#">Video Editing Checklist</a></li>
+                                <li><a href="#">Brand Pitch Email Templates</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ContentCreator Pro. Stay updated with the latest in content creation.</p>
+        </div>
+    </footer>
+</body>
+</html>
