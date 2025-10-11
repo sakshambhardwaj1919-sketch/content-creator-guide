@@ -204,6 +204,38 @@
             color: #667eea;
         }
         
+        .page-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .page-link-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .page-link-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .page-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-link-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
         footer {
             background: #333;
             color: white;
@@ -254,10 +286,11 @@
         <nav class="container">
             <div class="logo">ContentCreator Pro</div>
             <ul class="nav-links">
-                <li><a href="#start">Getting Started</a></li>
-                <li><a href="#platforms">Platforms</a></li>
-                <li><a href="#monetization">Monetization</a></li>
-                <li><a href="#growth">Growth Tips</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -341,34 +374,30 @@
             </div>
         </section>
 
-        <section id="monetization" class="section">
+        <section class="section">
             <div class="container">
-                <h2>Monetization Strategies</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>Ad Revenue</h3>
-                        <p>Platform-based advertising (YouTube Partner Program, TikTok Creator Fund). Requires meeting platform requirements for views and subscribers.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Sponsorships & Brand Deals</h3>
-                        <p>Partner with brands relevant to your niche. Rates typically range from $10-100+ per 1,000 followers depending on engagement and niche.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Affiliate Marketing</h3>
-                        <p>Promote products you use and love. Earn commissions on sales through your unique links. Amazon Associates, ShareASale, and brand-specific programs.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Digital Products</h3>
-                        <p>Create and sell courses, ebooks, presets, templates, or digital downloads. High profit margins and scalable income.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Memberships & Subscriptions</h3>
-                        <p>Patreon, YouTube memberships, or platform-specific subscription features. Provide exclusive content for paying supporters.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Merchandise</h3>
-                        <p>Sell branded products, apparel, or items related to your content. Use print-on-demand services to minimize upfront costs.</p>
-                    </div>
+                <h2>Explore More Resources</h2>
+                <div class="page-links">
+                    <a href="tools.html" class="page-link-card">
+                        <div class="page-icon">🛠️</div>
+                        <h3>Tools & Software</h3>
+                        <p>Comprehensive guide to content creation tools, from free options to professional software.</p>
+                    </a>
+                    <a href="courses.html" class="page-link-card">
+                        <div class="page-icon">📚</div>
+                        <h3>Courses & Learning</h3>
+                        <p>Best online courses and learning resources to master content creation skills.</p>
+                    </a>
+                    <a href="blog.html" class="page-link-card">
+                        <div class="page-icon">📝</div>
+                        <h3>Creator Blog</h3>
+                        <p>Latest tips, trends, and insights from the content creation industry.</p>
+                    </a>
+                    <a href="contact.html" class="page-link-card">
+                        <div class="page-icon">💬</div>
+                        <h3>Community & Support</h3>
+                        <p>Join our creator community and get support from fellow content creators.</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -390,41 +419,6 @@
                 </ul>
             </div>
         </section>
-
-        <section class="section">
-            <div class="container">
-                <h2>Essential Tools for Content Creators</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>Video Editing</h3>
-                        <p><strong>Free:</strong> DaVinci Resolve, OpenShot<br>
-                        <strong>Paid:</strong> Adobe Premiere Pro, Final Cut Pro, Filmora</p>
-                    </div>
-                    <div class="card">
-                        <h3>Photo Editing</h3>
-                        <p><strong>Free:</strong> GIMP, Canva<br>
-                        <strong>Paid:</strong> Adobe Photoshop, Lightroom, Affinity Photo</p>
-                    </div>
-                    <div class="card">
-                        <h3>Audio Editing</h3>
-                        <p><strong>Free:</strong> Audacity, GarageBand<br>
-                        <strong>Paid:</strong> Adobe Audition, Logic Pro, Hindenburg Pro</p>
-                    </div>
-                    <div class="card">
-                        <h3>Analytics & Management</h3>
-                        <p>Google Analytics, Social Blade, Hootsuite, Buffer, Later, Creator Studio</p>
-                    </div>
-                    <div class="card">
-                        <h3>Equipment</h3>
-                        <p>Camera/Phone, Microphone (Blue Yeti, Rode PodMic), Lighting (Ring light, Softbox), Tripod</p>
-                    </div>
-                    <div class="card">
-                        <h3>Design & Graphics</h3>
-                        <p>Canva, Adobe Creative Suite, Figma, Unsplash (free photos), Pexels (free videos)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <footer>
@@ -434,22 +428,22 @@
                     <h4>Quick Links</h4>
                     <a href="#start">Getting Started</a>
                     <a href="#platforms">Platforms</a>
-                    <a href="#monetization">Monetization</a>
-                    <a href="#growth">Growth Tips</a>
+                    <a href="tools.html">Tools & Software</a>
+                    <a href="courses.html">Courses</a>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
+                    <a href="blog.html">Creator Blog</a>
                     <a href="#">Content Calendar Template</a>
                     <a href="#">Creator Tools List</a>
                     <a href="#">Industry Reports</a>
-                    <a href="#">Community Forum</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
+                    <h4>Community</h4>
+                    <a href="contact.html">Join Community</a>
+                    <a href="#">Discord Server</a>
                     <a href="#">Newsletter</a>
-                    <a href="#">YouTube Channel</a>
-                    <a href="#">Discord Community</a>
-                    <a href="#">Contact Us</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
             </div>
             <p>&copy; 2024 ContentCreator Pro. Built with passion for aspiring creators.</p>
@@ -497,7 +491,7 @@
         }, observerOptions);
 
         // Observe all cards
-        document.querySelectorAll('.card, .platform-card').forEach(card => {
+        document.querySelectorAll('.card, .platform-card, .page-link-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
