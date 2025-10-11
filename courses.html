@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Courses & Learning Resources</title>
+    <meta name="description" content="Best online courses, tutorials, and learning resources for aspiring content creators.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            margin: -50px 0 0;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .course-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .course-content {
+            padding: 2rem;
+        }
+        
+        .course-content h4 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .free {
+            color: #28a745;
+        }
+        
+        .course-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .course-features li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .course-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .cta-button:hover {
+            background: #5a6fd8;
+        }
+        
+        .platform-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .platform-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .platform-logo {
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ContentCreator Pro</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Learn Content Creation</h1>
+            <p>Master the skills you need with these comprehensive courses and resources</p>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <div class="container">
+                <h2>Featured Courses</h2>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>YouTube Creator Masterclass</h3>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span>⭐ 4.8/5 (2,340 reviews)</span>
+                                <span class="price">$97</span>
+                            </div>
+                            <p>Complete guide to building a successful YouTube channel from 0 to 100K subscribers.</p>
+                            <ul class="course-features">
+                                <li>Channel setup and optimization</li>
+                                <li>Content strategy and planning</li>
+                                <li>Thumbnail and title optimization</li>
+                                <li>YouTube SEO and analytics</li>
+                                <li>Monetization strategies</li>
+                                <li>Live Q&A sessions</li>
+                            </ul>
+                            <a href="#" class="cta-button">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>TikTok Growth Blueprint</h3>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span>⭐ 4.9/5 (1,890 reviews)</span>
+                                <span class="price">$67</span>
+                            </div>
+                            <p>Learn how to create viral TikTok content and grow your following rapidly.</p>
+                            <ul class="course-features">
+                                <li>Viral content formulas</li>
+                                <li>Trending hashtag strategies</li>
+                                <li>Video editing techniques</li>
+                                <li>Algorithm understanding</li>
+                                <li>Brand collaboration tips</li>
+                                <li>Community access</li>
+                            </ul>
+                            <a href="#" class="cta-button">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Instagram Content Strategy</h3>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span>⭐ 4.7/5 (3,120 reviews)</span>
+                                <span class="price">$79</span>
+                            </div>
+                            <p>Master Instagram Reels, Stories, and Posts to build an engaged community.</p>
+                            <ul class="course-features">
+                                <li>Content pillars and planning</li>
+                                <li>Instagram Reels mastery</li>
+                                <li>Story engagement tactics</li>
+                                <li>Photography and editing</li>
+                                <li>Influencer partnerships</li>
+                                <li>Analytics and growth hacking</li>
+                            </ul>
+                            <a href="#" class="cta-button">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Podcast Launch Academy</h3>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span>⭐ 4.6/5 (987 reviews)</span>
+                                <span class="price">$127</span>
+                            </div>
+                            <p>Everything you need to start, grow, and monetize your podcast successfully.</p>
+                            <ul class="course-features">
+                                <li>Equipment and setup guide</li>
+                                <li>Recording and editing basics</li>
+                                <li>Hosting and distribution</li>
+                                <li>Guest booking strategies</li>
+                                <li>Sponsorship and monetization</li>
+                                <li>Marketing and promotion</li>
+                            </ul>
+                            <a href="#" class="cta-button">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Content Creator Business</h3>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span>⭐ 4.8/5 (1,456 reviews)</span>
+                                <span class="price">$197</span>
+                            </div>
+                            <p>Turn your content creation into a profitable business with multiple revenue streams.</p>
+                            <ul class="course-features">
+                                <li>Business structure and legal</li>
+                                <li>Multiple income streams</li>
+                                <li>Brand partnerships</li>
+                                <li>Product creation and sales</li>
+                                <li>Tax and financial planning</li>
+                                <li>Scaling and team building</li>
+                            </ul>
+                            <a href="#" class="cta-button">Enroll Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Video Editing Mastery</h3>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span>⭐ 4.9/5 (2,789 reviews)</span>
+                                <span class="price free">FREE</span>
+                            </div>
+                            <p>Learn professional video editing techniques using free and paid software.</p>
+                            <ul class="course-features">
+                                <li>DaVinci Resolve tutorial</li>
+                                <li>Color grading basics</li>
+                                <li>Audio editing and mixing</li>
+                                <li>Motion graphics intro</li>
+                                <li>Export optimization</li>
+                                <li>Project files included</li>
+                            </ul>
+                            <a href="#" class="cta-button">Start Free Course</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="platform-section">
+            <div class="container">
+                <h2>Learning Platforms</h2>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <div class="platform-logo">U</div>
+                        <h4>Udemy</h4>
+                        <p>Thousands of content creation courses with lifetime access and regular sales.</p>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">S</div>
+                        <h4>Skillshare</h4>
+                        <p>Creative-focused platform with hands-on projects and community feedback.</p>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">C</div>
+                        <h4>Coursera</h4>
+                        <p>University-level courses and specializations in digital marketing and media.</p>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">Y</div>
+                        <h4>YouTube</h4>
+                        <p>Free tutorials and masterclasses from successful content creators.</p>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">L</div>
+                        <h4>LinkedIn Learning</h4>
+                        <p>Professional development courses for content marketing and social media.</p>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">M</div>
+                        <h4>MasterClass</h4>
+                        <p>Learn from industry legends and celebrities in entertainment and media.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Free Resources</h2>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Creator Economy Report 2024</h3>
+                        </div>
+                        <div class="course-content">
+                            <p>Comprehensive analysis of the creator economy, trends, and earning potential across platforms.</p>
+                            <div class="course-meta">
+                                <span>📊 50+ pages</span>
+                                <span class="price free">FREE</span>
+                            </div>
+                            <a href="#" class="cta-button">Download PDF</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Content Calendar Template</h3>
+                        </div>
+                        <div class="course-content">
+                            <p>Pre-built content calendar templates for planning and organizing your content strategy.</p>
+                            <div class="course-meta">
+                                <span>📅 Google Sheets</span>
+                                <span class="price free">FREE</span>
+                            </div>
+                            <a href="#" class="cta-button">Get Template</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Hashtag Research Guide</h3>
+                        </div>
+                        <div class="course-content">
+                            <p>Step-by-step guide to finding and using the right hashtags for maximum reach and engagement.</p>
+                            <div class="course-meta">
+                                <span>🔍 Research tools</span>
+                                <span class="price free">FREE</span>
+                            </div>
+                            <a href="#" class="cta-button">Download Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ContentCreator Pro. Empowering creators through education and resources.</p>
+        </div>
+    </footer>
+</body>
+</html>
