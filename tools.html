@@ -5,8 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Creator Tools & Resources - Complete Guide</title>
     <meta name="description" content="Comprehensive list of tools, software, and resources for content creators including free and paid options.">
-    <link rel="stylesheet" href="style.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            margin: -50px 0 0;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
         .tool-category {
             background: white;
             margin: 2rem 0;
@@ -58,6 +146,23 @@
         
         .price-tag.freemium {
             background: #17a2b8;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -125,7 +230,7 @@
                             <p>The gold standard for photo editing and digital art creation with unlimited creative possibilities.</p>
                         </div>
                         <div class="tool-item">
-                            <span class="price-tag free">Free</span>
+                            <span class="price-tag">Free</span>
                             <h4>GIMP</h4>
                             <p>Open-source image editor with powerful features comparable to Photoshop, completely free to use.</p>
                         </div>
@@ -141,12 +246,12 @@
                     <h3>🎙️ Audio Recording & Editing</h3>
                     <div class="tool-grid">
                         <div class="tool-item">
-                            <span class="price-tag free">Free</span>
+                            <span class="price-tag">Free</span>
                             <h4>Audacity</h4>
                             <p>Open-source audio editor perfect for podcasts, voiceovers, and basic audio editing needs.</p>
                         </div>
                         <div class="tool-item">
-                            <span class="price-tag free">Free (Mac)</span>
+                            <span class="price-tag">Free (Mac)</span>
                             <h4>GarageBand</h4>
                             <p>Apple's free music creation and podcast recording software with built-in instruments and effects.</p>
                         </div>
@@ -193,12 +298,12 @@
                     <h3>📊 Analytics & SEO</h3>
                     <div class="tool-grid">
                         <div class="tool-item">
-                            <span class="price-tag free">Free</span>
+                            <span class="price-tag">Free</span>
                             <h4>Google Analytics</h4>
                             <p>Track website traffic, user behavior, and conversion metrics for your content and website.</p>
                         </div>
                         <div class="tool-item">
-                            <span class="price-tag free">Free</span>
+                            <span class="price-tag">Free</span>
                             <h4>Social Blade</h4>
                             <p>Track social media statistics and analytics across YouTube, Instagram, Twitter, and more.</p>
                         </div>
